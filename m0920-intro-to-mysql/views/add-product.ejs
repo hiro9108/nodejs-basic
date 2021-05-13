@@ -1,0 +1,24 @@
+  <%- include('partials/head.ejs') %>
+
+  <body>
+    <%- include('partials/header.ejs') %>
+    <main>
+      <form class="product-form" action="/admin/add-product" method="POST">
+        <div class="form-control">
+          <label for="name">Product Title</label>
+          <input type="text" name="title" id="title" required />
+          <br />
+          <label for="price">Price</label>
+          <input type="text" name="price" id="price" required />
+          <label for="name">Description</label>
+          <textarea name="description" id="description" row="5"></textarea>
+          <br />
+          <label for="name">Image URL</label>
+          <input type="text" name="imageUrl" id="imageUrl" required />
+          <br />
+        </div>
+        <button type="submit">Add Product</button>
+      </form>
+    </main>
+  </body>
+</html>
