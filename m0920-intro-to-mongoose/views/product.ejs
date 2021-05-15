@@ -1,0 +1,27 @@
+<%- include('partials/head.ejs') %>
+
+<body>
+    <%- include('partials/header.ejs') %>
+
+    <main>
+        <div>
+            <h1><%= product.title %></h1>
+            <hr>
+            <h3><%= product.price %></h3>
+
+            <a href="/admin/edit-product/<%= product._id%>?edit=true" class="btn">Edit</a>
+                
+            </form>
+
+            <form action="/admin/delete-product" method="POST">
+                <button class="btn">Delete</button>
+                <input type="hidden" name="productId" value="<%=product._id%>" />
+            </form>
+
+            <form action="/cart" method="POST">
+                <button class="btn">Add to Cart</button>
+                <input type="hidden" name="productId" value="<%=product._id%>" />
+            </form>
+        </div>
+    </main>
+</body>
