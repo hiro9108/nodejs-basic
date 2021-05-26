@@ -19,7 +19,7 @@ const Login = () => {
     try {
       const loginUser = { email, password }
       const loginRes = await Axios.post(
-        'http://localhost:8080/users/login',
+        `${process.env.REACT_APP_SERVER_URL}/users/login`,
         loginUser
       )
       setUserData({ 

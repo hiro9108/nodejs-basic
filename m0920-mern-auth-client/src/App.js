@@ -25,7 +25,7 @@ function App() {
       }
 
       const tokenRes = await Axios.post(
-        "http://localhost:8080/users/tokenIsValid", 
+        `${process.env.REACT_APP_SERVER_URL}/users/tokenIsValid`, 
         null,
         {
           headers: { "x-auth-token": token }
@@ -34,7 +34,7 @@ function App() {
       
       if(tokenRes.data){
         const userRes = await Axios.get(
-          'http://localhost:8080/users/',
+          `${process.env.REACT_APP_SERVER_URL}/users/`,
           {
             headers: { "x-auth-token": token }
           }
